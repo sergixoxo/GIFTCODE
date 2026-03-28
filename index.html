@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para ti mi amorcito ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Pantalla inicial -->
+    <div class="start-screen" id="startScreen">
+        <h1>🎁 Tengo algo especial para ti...</h1>
+        <button class="pulse" onclick="startExperience()"> <b>Haz clic aquí ❤️</b></button>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="container hidden" id="mainContent">
+
+        <h1 class="title">Feliz Cumpleaños Mi Amorcitooo 🎉</h1>
+
+        <p class="message">
+            <b>Hoy no es un día cualquiera... hoy hace 24 años nació la persona que cambió mi mundo 💖</b>  
+        </p>
+
+        <button class="btn pulse" onclick="openLetter()"> <b>Abrir carta 💌</b></button>
+
+        <!-- Carta -->
+        <div class="letter hidden" id="letter">
+            <div class="letter-content">
+                <p>
+                    <b>Desde que llegaste a mi vida, todo cambió para mejor…  
+                    tu sonrisa, tu forma de ser, tu esencia… todo en ti me hace feliz 💕  
+                </b></p>
+
+                <p>
+                    <b>Hoy celebro tu vida, pero también celebro tenerte conmigo ❤️ </b> 
+                </p>
+
+                <button class="btn pulse" onclick="showGallery()"> <b>Ver recuerdos 📸</b></button>
+            </div>
+        </div>
+
+        <!-- Galería -->
+        <div class="gallery hidden" id="gallery">
+            <img src="foto5.jpg">
+            <img src="foto2.jpg">
+            <img src="foto3.jpg">
+            <img src="foto4.jpg">
+            <img src="foto1.jpg">
+            <img src="foto6.jpg">
+            <img src="foto7.jpg">
+            <img src="foto8.jpg">
+        </div>
+
+        <!-- Final -->
+        <div class="hidden" id="finalMessage">
+            <h2>Te amo demasiado 💛 </h2>
+            <p> <b>Quiero seguir creando recuerdos contigo toda la vida 💫</b></p>
+        </div>
+
+    </div>
+
+    <!-- Corazones -->
+    <div id="hearts"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

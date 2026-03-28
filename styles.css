@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* 🌸 Fondo rosado pastel */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffd1dc, #ffb6c1);
+    color: #5a2a2a;
+    overflow-x: hidden;
+    overflow-y: scroll; /* 🔥 SIEMPRE hay scroll (evita temblor) */
+}
+
+
+
+/* 🔥 FIX clicks */
+#hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Pantalla inicial */
+.start-screen {
+    position: fixed; /* 🔥 importante */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+}
+
+
+/* Contenedor */
+.container {
+    text-align: center;
+    max-width: 700px;
+    padding: 20px;
+    margin: 80px auto; /* 🔥 centra sin usar flex */
+    z-index: 10;
+}
+
+
+
+/* 🔥 FIX VISIBILIDAD */
+.hidden {
+    display: none !important;
+}
+
+/* Texto */
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s;
+}
+
+.message {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Botones */
+.btn, .start-screen button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background: white;
+    color: #c94f7c;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn:hover, .start-screen button:hover {
+    transform: scale(1.1);
+}
+
+/* 💓 Latido */
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+    100% { transform: scale(1); }
+}
+
+/* Carta */
+.letter {
+    margin-top: 20px;
+    background: rgba(255,255,255,0.6);
+    padding: 20px;
+    border-radius: 15px;
+    animation: openLetter 0.6s ease;
+}
+
+.letter-content {
+    animation: fadeIn 1.5s;
+}
+
+/* Galería */
+.gallery {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes openLetter {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Corazones */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff8fab;
+    transform: rotate(45deg);
+    animation: float 6s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff8fab;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+}
+
+.heart::after {
+    left: -10px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff8fab;
+    border-radius: 10px;
+}
+
+#finalMessage {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 2px solid rgba(0,0,0,0.1);
+}
